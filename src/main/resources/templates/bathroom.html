@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Prog Academy</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Area</th>
+                <th scope="col">Bath</th>
+                <th scope="col">Shower</th>
+                <th scope="col">Mirror</th>
+                <th scope="col">Washing Machine</th>
+                <th scope="col">Boiler</th>
+                <th scope="col">Floor type</th>
+            </tr>
+            <tr th:each="a:${bathroom}">
+                <td th:text="${a.getArea()}"></td>
+                <td th:text="${a.isBath()}"></td>
+                <td th:text="${a.isShower()}"></td>
+                <td th:text="${a.isMirror()}"></td>
+                <td th:text="${a.isWashingMachine()}"></td>
+                <td th:text="${a.isBoiler()}"></td>
+                <td th:text="${a.getFloor()}"></td>
+            </tr>
+        </thead>
+    </table>
+
+
+<div class="container">
+    <form action="/add_bath" method="get">
+        <input type="hidden" name="flatId" th:value="${flatId}" />
+        <button type="submit">addBathroom</button>
+    </form>
+</div>
+</body>
+</html>

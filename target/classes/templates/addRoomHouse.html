@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Prog Academy</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<form action="/roomHouse/add_room_h/room_data" method="post">
+    <input type="hidden" name="houseId" th:value="${a.getId()}" />
+    <label>Area: </label>
+    <input type="text" name="area"><br>
+
+    <label  for="tv">Tv </label>
+    <select id="tv" name="tv" >
+        <option value="true">true</option>
+        <option value="false">false</option>
+    </select><br>
+
+    <label  for="board">Board </label>
+    <select id="board" name="board" >
+        <option value="true">true</option>
+        <option value="false">false</option>
+    </select><br>
+
+    <label  for="floor">Floor </label>
+    <select id="floor" name="floor" >
+        <option value="TILES">TILES</option>
+        <option value="LAMINATE">LAMINATE</option>
+        <option value="PARQUET">PARQUET</option>
+    </select><br>
+
+    <label for="type">Type</label>
+    <select id="type" name="type">
+        <option value="BEDROOM">BEDROOM</option>
+        <option value="HALL">HALL</option>
+    </select><br>
+
+    <input type="submit" />
+</form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Prog Academy</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="container">
+
+
+    <form action="/bathroomFlat/add_bath/bathroom_date" method="post">
+        <input type="hidden" name="flatId" th:value="${a.getId()}" />
+        <label>Area: </label>
+        <input type="text" name="area"><br>
+
+        <label  for="bath">Bath </label>
+        <select id="bath" name="bath" >
+            <option value="true">true</option>
+            <option value="false">false</option>
+        </select><br>
+
+        <label  for="shower">Shower </label>
+        <select id="shower" name="shower" >
+            <option value="true">true</option>
+            <option value="false">false</option>
+        </select><br>
+
+        <label  for="mirror">Mirror </label>
+        <select id="mirror" name="mirror" >
+            <option value="true">true</option>
+            <option value="false">false</option>
+        </select><br>
+
+        <label  for="washingMachine">Washing machine </label>
+        <select id="washingMachine" name="washingMachine" >
+            <option value="true">true</option>
+            <option value="false">false</option>
+        </select><br>
+
+        <label  for="boiler">Boiler </label>
+        <select id="boiler" name="boiler" >
+            <option value="true">true</option>
+            <option value="false">false</option>
+        </select><br>
+
+        <label  for="floor">Floor </label>
+        <select id="floor" name="floor" >
+            <option value="TILES">TILES</option>
+            <option value="LAMINATE">LAMINATE</option>
+            <option value="PARQUET">PARQUET</option>
+        </select><br>
+
+        <input type="submit" />
+    </form>
+</div>
+</body>
+</html>

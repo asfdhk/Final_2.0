@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Prog Academy</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="txt_field">
+    <form action="/create_flat/data" method="POST">
+        <h1>Set flat data</h1>
+
+        <label>Address: </label>
+        <input type="text" name="address" ><br>
+        <label>Price: </label>
+        <input type="text" name="price"><br>
+        <label>Area:</label>
+        <input type="text" name="area"><br>
+        <label>Storey:</label>
+        <input type="text" name="storey"><br>
+
+        <label  for="heating">Heating </label>
+        <select id="heating" name="heating" >
+            <option value="GAS">GAS</option>
+            <option value="ELECTRIC">ELECTRIC</option>
+            <option value="WITH_FIREWOOD">WITH_FIREWOOD</option>
+        </select><br>
+
+        <label  for="gas">Gas </label>
+        <select id="gas" name="gas" >
+            <option value="true">true</option>
+            <option value="false">false</option>
+        </select><br>
+
+        <label  for="balcony" >Balcony </label>
+        <select id="balcony" name="balcony" >
+            <option value="true">true</option>
+            <option value="false">false</option>
+        </select><br>
+
+        <h2>Set kitchen data</h2>
+        <label>Area:</label>
+        <input type="text" name="areaK"><br>
+
+        <label for="dishWash">dish Wash</label>
+        <select id="dishWash" name="dishWash">
+            <option value="true">true</option>
+            <option value="false">false</option>
+        </select><br>
+
+        <label for="microwaveOven">microwave Oven</label>
+        <select id="microwaveOven" name="microwaveOven">
+            <option value="true">true</option>
+            <option value="false">false</option>
+        </select><br>
+
+        <label for="oven">Oven</label>
+        <select id="oven" name="oven">
+            <option value="true">true</option>
+            <option value="false">false</option>
+        </select><br>
+
+        <label for="refrigerator" >Refrigerator</label>
+        <select id="refrigerator" name="refrigerator">
+            <option value="true">true</option>
+            <option value="false">false</option>
+        </select><br>
+
+        <label for="cooker">Cooker</label>
+        <select id="cooker" name="cooker">
+            <option value="true">true</option>
+            <option value="false">false</option>
+        </select><br>
+
+        <label for="floor">Floor</label>
+        <select id="floor" name="floor">
+            <option value="TILES">TILES</option>
+            <option value="LAMINATE">LAMINATE</option>
+            <option value="PARQUET">PARQUET</option>
+        </select><br>
+        <input type="submit" />
+    </form>
+
+</div>
+</body>
+</html>

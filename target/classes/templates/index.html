@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Prog Academy</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+</head>
+    <body>
+        <p><td th:text="${user.getRole()}"></td></p>
+        <p><td th:if="${not (user.getNumberPhone().isEmpty())}" th:text="'Number phone: '+${user.getNumberPhone()}"></td></p>
+
+        <div class="c">
+            <button type="button" id="kitchen_data">Kitchen</button>
+            <button type="button" id="bathroom_data">Bathroom</button>
+            <button type="button" id="room_data">Room</button>
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td></td>
+                    <th scope="col">Address</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Area</th>
+                    <th scope="col">Storey</th>
+                    <th scope="col">Heating</th>
+                    <th scope="col">Balcony</th>
+                    <th scope="col">Gas</th>
+                    <th scope="col">Rooms</th>
+                    <th scope="col">Bathrooms</th>
+                </tr>
+            </thead>
+            <tr th:each="a:${list.content}">
+                <td><input  type="checkbox" name="flat_id" th:value="${a.getId()}"></td>
+                <td th:text="${a.getAddress()}"></td>
+                <td th:text="${a.getPrice()}"></td>
+                <td th:text="${a.getArea()}"></td>
+                <td th:text="${a.getStorey()}"></td>
+                <td th:text="${a.getHeating().toString()}"></td>
+                <td th:text="${a.isBalcony()}"></td>
+                <td th:text="${a.isGas()}"></td>
+                <td th:text="${a.getRooms().size()}"></td>
+                <td th:text="${a.getBathrooms().size()}"></td>
+            </tr>
+        </table>
+        <div>
+        <span>Page:</span>
+        <span th:each="i : ${#numbers.sequence(0, list.totalPages - 1)}">
+            <a th:href="@{/(page=${i})}" th:text="${i} + 1"></a>
+        </span>
+        </div>
+
+
+        <p><a href="/create_flat">add_flat</a></p>
+
+        <div class="c">
+            <button type="button" id="kitchen_data_house">Kitchen</button>
+            <button type="button" id="bathroom_data_house">Bathroom</button>
+            <button type="button" id="room_data_house">Room</button>
+        </div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td></td>
+                <th scope="col">Address</th>
+                <th scope="col">Price</th>
+                <th scope="col">Area</th>
+                <th scope="col">Amount Storey</th>
+                <th scope="col">Heating</th>
+                <th scope="col">Garage</th>
+                <th scope="col">Gas</th>
+                <th scope="col">Rooms</th>
+                <th scope="col">Bathrooms</th>
+            </tr>
+            </thead>
+            <tr th:each="a:${houses.content}">
+                <td><input  type="checkbox" name="house_id" th:value="${a.getId()}"></td>
+                <td th:text="${a.getAddress()}"></td>
+                <td th:text="${a.getPrice()}"></td>
+                <td th:text="${a.getArea()}"></td>
+                <td th:text="${a.getAmountStoreys()}"></td>
+                <td th:text="${a.getHeating().toString()}"></td>
+                <td th:text="${a.isGarage}"></td>
+                <td th:text="${a.isGas()}"></td>
+                <td th:text="${a.getRooms().size()}"></td>
+                <td th:text="${a.getBathrooms().size()}"></td>
+            </tr>
+        </table>
+
+        <div>
+            <span>Page:</span>
+            <span th:each="i : ${#numbers.sequence(0, houses.totalPages - 1)}">
+            <a th:href="@{/(pageH=${i})}" th:text="${i} + 1"></a>
+        </span>
+        </div>
+
+        <p><a href="/create_house">add_house</a></p>
+
+        <p><a href="/logout">log_out</a></p>
+
+
+        <script>
+            $('#kitchen_data').click(function () {
+                var selectedId = $('input[name="flat_id"]:checked').val();
+                if (selectedId) {
+                    $.get("/kitchenFlat", { id: selectedId }, function (data, status) {
+                        window.location.href = "/kitchenFlat?id=" + selectedId;
+                    });
+                }
+            });
+
+            $('#bathroom_data').click(function (){
+                var selectedId = $('input[name="flat_id"]:checked').val();
+                if (selectedId){
+                    $.get("/bathroomFlat", {id:selectedId}, function (data,status){
+                        window.location.href = "/bathroomFlat?id=" + selectedId;
+                    });
+                }
+            });
+
+            $('#room_data').click(function (){
+                var selectedId = $('input[name="flat_id"]:checked').val();
+                if (selectedId){
+                    $.get("/roomFlat", {id:selectedId}, function (data,status){
+                        window.location.href = "/roomFlat?id=" + selectedId;
+                    });
+                }
+            });
+
+
+
+            $('#kitchen_data_house').click(function () {
+                var selectedId = $('input[name="house_id"]:checked').val();
+                if (selectedId) {
+                    $.get("/kitchenHouse", { id: selectedId }, function (data, status) {
+                        window.location.href = "/kitchenHouse?id=" + selectedId;
+                    });
+                }
+            });
+
+            $('#bathroom_data_house').click(function (){
+                var selectedId = $('input[name="house_id"]:checked').val();
+                if (selectedId){
+                    $.get("/bathroomHouse", {id:selectedId}, function (data,status){
+                        window.location.href = "/bathroomHouse?id=" + selectedId;
+                    });
+                }
+            });
+
+            $('#room_data_house').click(function (){
+                var selectedId = $('input[name="house_id"]:checked').val();
+                if (selectedId){
+                    $.get("/roomHouse", {id:selectedId}, function (data,status){
+                        window.location.href = "/roomHouse?id=" + selectedId;
+                    });
+                }
+            });
+
+        </script>
+
+    </body>
+</html>

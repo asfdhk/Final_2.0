@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Prog Academy</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Area</th>
+        <th scope="col">TV</th>
+        <th scope="col">Board</th>
+        <th scope="col">Floor type</th>
+        <th scope="col">Room Type</th>
+    </tr>
+    <tr th:each="a:${rooms}">
+        <td th:text="${a.getArea()}"></td>
+        <td th:text="${a.isTv()}"></td>
+        <td th:text="${a.isBoard()}"></td>
+        <td th:text="${a.getFloor()}"></td>
+        <td th:text="${a.getType()}"></td>
+    </tr>
+    </thead>
+</table>
+<div class="container">
+    <form action="/add_room_h" method="get">
+        <input type="hidden" name="houseId" th:value="${houseId}" />
+        <button type="submit">addRoom</button>
+    </form>
+</div>
+</body>
+</html>

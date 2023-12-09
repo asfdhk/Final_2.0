@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Prog Academy</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1> Kitchen data:</h1>
+    <h2 th:text="Area- +${kitchen.getArea()}"></h2>
+    <h2 th:text="Cooker- +${kitchen.isCooker()}"></h2>
+    <h2 th:text="DishWash- +${kitchen.isDishWash()}"></h2>
+    <h2 th:text="MicrowaveOven- +${kitchen.isMicrowaveOven()}"></h2>
+    <h2 th:text="Oven- +${kitchen.isOven()}"></h2>
+    <h2 th:text="Refrigerator- +${kitchen.isRefrigerator()}"></h2>
+    <h2 th:text="FloorType- +${kitchen.getFloor()}"></h2>
+
+</body>
+</html>

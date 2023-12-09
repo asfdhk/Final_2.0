@@ -1,0 +1,65 @@
+h2 {
+    text-align: center;
+}
+
+.c{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    outline: 3px ridge #101325;
+    background-color: #116ba7;
+    color: #000000;
+    border: none; /* Видалити рамку */
+    padding: 10px 20px; /* Внутрішні відступи */
+    margin: 5px; /* Зовнішні відступи */
+    cursor: pointer; /* Зміна курсору при наведенні */
+}
+
+/* Стилізація таблиць */
+table {
+    width: 100%; /* Розтягнути таблицю на всю ширину контейнера */
+    border-collapse: collapse; /* Злиття границь комірок */
+    margin-bottom: 20px; /* Зовнішній відступ знизу таблиці */
+}
+
+/* Стилізація заголовків таблиці */
+th {
+    /*background-color:  linear-gradient(120deg,#2980b9, #9625c4); !* Колір фону заголовків *!*/
+    background-color: linear-gradient(120deg,#2980b9, #9625c4);
+    text-align: center; /* Центрування тексту в заголовках */
+    padding: 10px; /* Внутрішні відступи в заголовках */
+}
+
+/* Стилізація комірок таблиці */
+td {
+    text-align: center; /* Центрування тексту в комірках */
+    padding: 1px; /* Внутрішні відступи в комірках */
+}
+
+/* Стилізація посилань номерації сторінок */
+span a {
+    text-decoration: none; /* Видалити підкреслення з посилань */
+    padding: 5px 10px; /* Внутрішні відступи в посиланнях */
+    background-color: rgb(54, 17, 220); /* Колір фону посилань */
+    color: #03086b; /* Колір тексту посилань */
+    border: 1px solid #06060a; /* Рамка навколо посилань */
+    margin: 2px; /* Зовнішні відступи між посиланнями */
+    border-radius: 5px; /* Закруглені кути для посилань */
+}
+
+/* Стиль активного посилання номерації сторінок */
+span a.active {
+    background-color: #ec0e0e; /* Колір фону активного посилання */
+    border: 1px solid #555; /* Рамка активного посилання */
+}
+
+body{
+    background: linear-gradient(120deg,#2980b9, #8e44ad);
+}
+
+.ab{
+    color: rgb(0, 0, 0) ;
+}
